@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * Get all of the issues for the user.
+     */
+    public function issues() {
+        return $this->hasMany(Issue::class);
+    }
 }

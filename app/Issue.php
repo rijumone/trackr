@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Issue extends Model
 {
-    //
+    protected $fillable = [
+    	'assignee',
+    	'title',
+    	'description',
+    	'tentative_date',
+    ];
 }

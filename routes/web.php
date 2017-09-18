@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/create-issue','IssueController@createIssue')->name('create-issue');
+Route::get('/create-issue','IssueController@createIssue')->name('create-issue')->middleware('auth');
+
+Route::get('/issue-list','IssueController@index')->name('index-issue')->middleware('auth');
+
+Route::post('/create-issue','IssueController@createIssueSubmit')->name('create-issue-submit');
+
